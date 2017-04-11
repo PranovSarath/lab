@@ -194,7 +194,7 @@ public class SignUp extends AppCompatActivity {
                 String picturePath = c.getString(columnIndex);
                 c.close();
                 Bitmap thumbnail = (BitmapFactory.decodeFile(picturePath));
-                Log.w("path of image from gallery", picturePath+"");
+                Log.w("path", picturePath+"");
                 photograph.setImageBitmap(thumbnail);
             }
         }

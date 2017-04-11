@@ -57,14 +57,15 @@ public class SignUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       /* Bundle mainsData = getIntent().getExtras() ;
-        if(mainsData== null)
+
+        setContentView(R.layout.activity_sign_up);
+
+        Intent mainData = getIntent() ;
+        if(mainData== null)
             return;
         else {
-            String mainsMessage = mainsData.getString("mainsMessage");
+            String mainMessage = mainData.getStringExtra("mainMessage");
         }
-        */
-        setContentView(R.layout.activity_sign_up);
         firstName = (EditText) findViewById(R.id.firstName);
         middleName = (EditText) findViewById(R.id.middleName);
         lastName = (EditText) findViewById(R.id.lastName);
@@ -193,7 +194,7 @@ public class SignUp extends AppCompatActivity {
                 String picturePath = c.getString(columnIndex);
                 c.close();
                 Bitmap thumbnail = (BitmapFactory.decodeFile(picturePath));
-                Log.w("path of image from gallery......******************.........", picturePath+"");
+                Log.w("path of image from gallery", picturePath+"");
                 photograph.setImageBitmap(thumbnail);
             }
         }

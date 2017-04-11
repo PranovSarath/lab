@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etUsername;
     Button loginButton;
     TextView tx1;
+    String userName ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +29,16 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                userName = etUsername.getText().toString() ;
                 if (etUsername.getText().toString().equals("admin@gmail.com")) {
                     Intent i = new Intent(MainActivity.this, SignUp.class);
-                    // i.putExtra("mainMessage", userName);
+                     i.putExtra("mainMessage", userName);
                     startActivity(i);
                 }
                 else
                     {
                         Intent i = new Intent(MainActivity.this, SignIn.class);
+                        i.putExtra("mainMessage", userName);
                         startActivity(i);
                     }
 
